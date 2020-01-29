@@ -53,4 +53,13 @@ class SchoolTest < Minitest::Test
 
     assert_equal true, school.hours_in_school_day > 4
   end
+
+  def test_standard_names
+    school = School.new('9:00', 7)
+    school.add_student_name('Aurora')
+    school.add_student_name('tim')
+    school.add_student_name('megan')
+
+    assert_equal ["Aurora", "Tim", "Megan"], school.standard_student_names
+  end
 end
