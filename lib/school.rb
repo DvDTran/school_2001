@@ -11,4 +11,8 @@ class School
   def add_student_name(name)
     @student_names << name
   end
+
+  def standard_student_names
+    @student_names.collect {|name| name.capitalize}
+  end
 end
